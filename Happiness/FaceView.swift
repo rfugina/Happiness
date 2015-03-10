@@ -31,6 +31,13 @@ class FaceView: UIView {
         static let FaceRadiusToMouthOffsetRatio: CGFloat = 3
     }
 
+    func scale(gesture: UIPinchGestureRecognizer) {
+        if gesture.state == .Changed {
+            scale *= gesture.scale
+            gesture.scale = 1
+        }
+    }
+
     weak var dataSource: FaceViewDataSource?
 
     private enum Eye { case Left, Right }
