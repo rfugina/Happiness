@@ -19,6 +19,11 @@
                             <view contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="Fab-KI-j0y" customClass="FaceView" customModule="Happiness" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="lineWidth">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -29,10 +34,13 @@
                             <constraint firstAttribute="trailing" secondItem="Fab-KI-j0y" secondAttribute="trailing" id="znJ-9l-2hA"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="faceView" destination="Fab-KI-j0y" id="iGR-wj-rQ8"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dYw-0d-K8h" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="332" y="222"/>
+            <point key="canvasLocation" x="322" y="256"/>
         </scene>
     </scenes>
 </document>
