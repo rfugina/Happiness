@@ -22,6 +22,9 @@ class FaceView: UIView {
     @IBInspectable
     var scale: CGFloat = 0.9 { didSet { setNeedsDisplay() } }
 
+    let max_scale: CGFloat = 2
+    let min_scale: CGFloat = 0.1
+
     private struct Scaling {
         static let FaceRadiusToEyeRadiusRatio: CGFloat = 10
         static let FaceRadiusToEyeOffsetRatio: CGFloat = 3
@@ -33,7 +36,7 @@ class FaceView: UIView {
 
     func scale(gesture: UIPinchGestureRecognizer) {
         if gesture.state == .Changed {
-            scale *= gesture.scale
+            scale = min(max(gesture.scale * scale, min_scale), max_scale)
             gesture.scale = 1
         }
     }
